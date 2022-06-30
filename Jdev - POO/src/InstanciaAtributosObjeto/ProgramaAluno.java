@@ -45,6 +45,7 @@ public class ProgramaAluno {
 		System.out.println("Turma: " +aluno1.getTurma());
 		System.out.println("Sexo: " +aluno1.getSexo());
 		System.out.println("Media: " +aluno1.MediaAluno());
+		
 
 	}
 
