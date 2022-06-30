@@ -14,26 +14,17 @@ public class ProgramaAluno {
 		String sexo = JOptionPane.showInputDialog("Qual o Sexo do aluno?");
 		String turma = JOptionPane.showInputDialog("Qual o nome da turma?");
 
-		// Instanciando a primeira nota e a primeira Disciplina
-		Nota nota1 = new Nota();
-		nota1.setDisciplina("Banco de Dados");
-		nota1.setNota(9);
-
-		// Instanciando a segunda nota e a segunda Disciplina
-		Nota nota2 = new Nota();
-		nota2.setDisciplina("JavaScript");
-		nota2.setNota(10);
-
-		// Instanciando a terceira nota e a terceira Disciplina
-		Nota nota3 = new Nota();
-		nota3.setDisciplina("CSS");
-		nota3.setNota(8);
-
-		// Inserindo todas as Discuplinas e notas na Lista que foi criada na classe
-		// Aluno.
-		aluno1.getNotas().add(nota1);
-		aluno1.getNotas().add(nota2);
-		aluno1.getNotas().add(nota3);
+		for (int i = 0; i<4; i++) {
+			String disciplina = JOptionPane.showInputDialog("Qual a Disciplina");
+			String notaDisciplina = JOptionPane.showInputDialog("Qual a Nota "+(i+1));
+			
+			Nota nota = new Nota();
+			nota.setDisciplina(disciplina);
+			nota.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getNotas().add(nota);	
+			
+		}
 
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade));
