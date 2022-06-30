@@ -13,7 +13,7 @@ public class ProgramaAluno {
 		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
 		String sexo = JOptionPane.showInputDialog("Qual o Sexo do aluno?");
 		String turma = JOptionPane.showInputDialog("Qual o nome da turma?");
-
+		//Adicionando uma lista de forma Dinâmica
 		for (int i = 0; i<4; i++) {
 			String disciplina = JOptionPane.showInputDialog("Qual a Disciplina");
 			String notaDisciplina = JOptionPane.showInputDialog("Qual a Nota "+(i+1));
@@ -25,6 +25,17 @@ public class ProgramaAluno {
 			aluno1.getNotas().add(nota);	
 			
 		}
+		//Removendo da Lista 
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja Remover uma Disciplina?");
+		
+		if (escolha == 0 ) {
+			String discilpinaRemover = JOptionPane.showInputDialog("Qual Disciplina deseja remover 1,2,3,4?");
+			aluno1.getNotas().remove(Integer.valueOf(discilpinaRemover)-1);
+		}
+		
+				
+		
+				
 
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade));
