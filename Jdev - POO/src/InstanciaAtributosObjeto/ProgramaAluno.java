@@ -1,10 +1,19 @@
 package InstanciaAtributosObjeto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class ProgramaAluno {
 
 	public static void main(String[] args) {
+		
+		//Criando uma lista de Alunos 
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for(int qtd=0; qtd<=1;qtd++){
+		
 		// New Aluno é uma instância (Criação do Objeto)
 		// aluno1 é uma referência para o Objeto Aluno
 		Aluno aluno1 = new Aluno();
@@ -13,6 +22,12 @@ public class ProgramaAluno {
 		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
 		String sexo = JOptionPane.showInputDialog("Qual o Sexo do aluno?");
 		String turma = JOptionPane.showInputDialog("Qual o nome da turma?");
+		
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(idade));
+		aluno1.setSexo(sexo);
+		aluno1.setTurma(turma);
+		
 		//Adicionando uma lista de forma Dinâmica
 		for (int i = 0; i<4; i++) {
 			String disciplina = JOptionPane.showInputDialog("Qual a Disciplina");
@@ -32,23 +47,19 @@ public class ProgramaAluno {
 			String discilpinaRemover = JOptionPane.showInputDialog("Qual Disciplina deseja remover 1,2,3,4?");
 			aluno1.getNotas().remove(Integer.valueOf(discilpinaRemover)-1);
 		}
+		//Adicionando alunos na Lista
 		
-				
 		
-				
-
-		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setSexo(sexo);
-		aluno1.setTurma(turma);
+		alunos.add(aluno1);
 		
-		System.out.println("Nome aluno: " +aluno1.getNome());
-		System.out.println("Idade: " +aluno1.getIdade());
-		System.out.println("Turma: " +aluno1.getTurma());
-		System.out.println("Sexo: " +aluno1.getSexo());
-		System.out.println("Media: " +aluno1.MediaAluno());
+		}
 		
-
+		for (Aluno aluno : alunos) {
+		
+		System.out.println(aluno);
+		System.out.println("Media: " +aluno.MediaAluno());
+		System.out.println("-------------------------------------");
+		}
 	}
 
 }
